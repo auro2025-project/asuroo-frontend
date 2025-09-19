@@ -155,7 +155,7 @@ const AsurLogoAnimation = () => {
         <div
           className='text-2xl md:text-3xl lg:text-4xl font-semibold text-primaryblack transition-all duration-1000 mt-4'
         >
-          insurance platform
+          insurance platform 
         </div>
       </div>
     </div>
