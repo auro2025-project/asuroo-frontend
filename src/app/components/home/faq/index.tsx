@@ -10,18 +10,18 @@ const FAQSection = () => {
       question: "What is the meaning of ASUROO and what it does?",
       answer: (
         <>
-          A Simple Unique Rewarding seacrh platform for insurance products. We
+          A Simple Unique Rewarding search platform for insurance products. We
           provide customers with comparison and CashBack or instant commission
           rebate. You will enjoy the best of both worlds with ASUROO when you
-          compare and save int the insurance product you need.
+          compare and save in the insurance product you need.
         </>
       ),
     },
-      {
-      question: "Is ASUROO quotation reliable? ",
+    {
+      question: "Is ASUROO quotation reliable?",
       answer: (
         <>
-          ASUROO integrates your MyInfo and Singpass information to automatically answer insurance partners’ questions about you and dynamically generate quotations based on the coverage you need.  
+          ASUROO integrates your MyInfo and Singpass information to automatically answer insurance partners' questions about you and dynamically generate quotations based on the coverage you need.
         </>
       ),
     },
@@ -31,13 +31,13 @@ const FAQSection = () => {
         <>
           ASUROO is an insurance platform, not an insurance company because we
           do not underwrite policies. Insurance commissions are already built
-          into the price of an insurance policy, so you&apos;re not paying any extra
-          when buying from ASUROO but that doesn&apos;t mean you can&apos;t find ways to
-          save money! That&apos;s why ASUROO helps you comprae quotes from multiple
+          into the price of an insurance policy, so you're not paying any extra
+          when buying from ASUROO but that doesn't mean you can't find ways to
+          save money! That's why ASUROO helps you compare quotes from multiple
           companies in one simple platform through our unique business model
-          that strike to reward its community members within. We make it
+          that strikes to reward its community members within. We make it
           seamless and interactive with online tools supported by expansive
-          InsurePedia, guidea and experience from real, licensed humans to help
+          InsurePedia, guides and experience from real, licensed humans to help
           you get covered.
         </>
       ),
@@ -47,14 +47,14 @@ const FAQSection = () => {
       answer: (
         <>
           Banks, Insurance companies and Insurance Brokers must be licensed and
-          regulated by Monitary Authority of Singapore (MAS). It is actually
-          safer to buy insurance policy from ASUROO beacuse we are Insurance
-          Broker. We comply to stringest business requirements from Monetary
+          regulated by Monetary Authority of Singapore (MAS). It is actually
+          safer to buy insurance policy from ASUROO because we are Insurance
+          Broker. We comply to stringent business requirements from Monetary
           Authority of Singapore (MAS), to promote and support the growth and
-          development of insurance industry in SIngapore. ASUROO as your
+          development of insurance industry in Singapore. ASUROO as your
           representing Insurance Broker will fight for you and your interest at
           best. When our business objective is to share the reward and/or
-          commision with you, there is no need to push for or give preference to
+          commission with you, there is no need to push for or give preference to
           any one insurer over another.
         </>
       ),
@@ -64,7 +64,7 @@ const FAQSection = () => {
       answer: (
         <>
           YES! ASUROO as Insurance Brokers are required by law in Singapore to
-          be licensed by the Monetary Authority of Singapore (MAS). View our license{" "} 
+          be licensed by the Monetary Authority of Singapore (MAS). View our license{" "}
           <a
             href="https://eservices.mas.gov.sg/fid/institution/detail/253856-ASUROO-PTE-LTD"
             target="_blank"
@@ -81,12 +81,10 @@ const FAQSection = () => {
       question: "What is ASUROO's Give-Back and how does it works?",
       answer: (
         <>
-          ASUROO was designed for a good social purpose, to create a rewarding community. We take a slice of the commission to operate our business and give-back the rest to you as CashBack or Instant Commission Rebate in your premium. We believe this is a win-win solution for everyone beacuse your happiness is key to our business success and sustainability.  The More you saved, the more successful ASUROO will be!
+          ASUROO was designed for a good social purpose, to create a rewarding community. We take a slice of the commission to operate our business and give-back the rest to you as CashBack or Instant Commission Rebate in your premium. We believe this is a win-win solution for everyone because your happiness is key to our business success and sustainability. The More you saved, the more successful ASUROO will be!
         </>
       ),
     },
-  
-  
   ];
 
   const toggleItem = (index: number) => {
@@ -106,10 +104,10 @@ const FAQSection = () => {
           {faqData.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group"
+              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group animate-fade-in-up opacity-0"
               style={{
                 animationDelay: `${index * 200}ms`,
-                animation: "fadeInUp 0.6s ease-out forwards",
+                animationFillMode: 'forwards'
               }}
             >
               <button
@@ -132,7 +130,7 @@ const FAQSection = () => {
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   openItem === index
-                    ? "opacity-100"
+                    ? "max-h-96 opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
@@ -147,19 +145,6 @@ const FAQSection = () => {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 };

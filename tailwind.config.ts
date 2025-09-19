@@ -31,6 +31,21 @@ const config: Config = {
       boxShadow: {
         'card': '0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgb(16 24 40 / 4%)',
       },
+      keyframes: {
+        'fade-in-up': {
+          'from': {
+            opacity: '0',
+            transform: 'translateY(30px)'
+          },
+          'to': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        }
+      },
+      animation: {
+        'fade-in-up': 'fade-in-up 0.6s ease-out forwards'
+      }
     },
   },
   plugins: [],
