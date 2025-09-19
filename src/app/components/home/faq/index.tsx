@@ -21,7 +21,7 @@ const FAQSection = () => {
       question: "Is ASUROO quotation reliable?",
       answer: (
         <>
-          ASUROO integrates your MyInfo and Singpass information to automatically answer insurance partners' questions about you and dynamically generate quotations based on the coverage you need.
+          ASUROO integrates your MyInfo and Singpass information to automatically answer insurance partners&apos; questions about you and dynamically generate quotations based on the coverage you need.
         </>
       ),
     },
@@ -31,9 +31,9 @@ const FAQSection = () => {
         <>
           ASUROO is an insurance platform, not an insurance company because we
           do not underwrite policies. Insurance commissions are already built
-          into the price of an insurance policy, so you're not paying any extra
-          when buying from ASUROO but that doesn't mean you can't find ways to
-          save money! That's why ASUROO helps you compare quotes from multiple
+          into the price of an insurance policy, so you&apos;re not paying any extra
+          when buying from ASUROO but that doesn&apos;t mean you can&apos;t find ways to
+          save money! That&apos;s why ASUROO helps you compare quotes from multiple
           companies in one simple platform through our unique business model
           that strikes to reward its community members within. We make it
           seamless and interactive with online tools supported by expansive
