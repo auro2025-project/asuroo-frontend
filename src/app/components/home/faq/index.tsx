@@ -104,11 +104,7 @@ const FAQSection = () => {
           {faqData.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group animate-fade-in-up opacity-0"
-              style={{
-                animationDelay: `${index * 200}ms`,
-                animationFillMode: 'forwards'
-              }}
+              className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group animate-fade-in-up  delay-${index}`}
             >
               <button
                 onClick={() => toggleItem(index)}
@@ -131,7 +127,7 @@ const FAQSection = () => {
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   openItem === index
                     ? "max-h-96 opacity-100"
-                    : "max-h-0 opacity-0"
+                    : "max-h-0 "
                 }`}
               >
                 <div className="px-8 pb-6">
