@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const FAQSection = () => {
-  const [openItem, setOpenItem] = useState<number | null>(0); // First item open by default
+  const [openItem, setOpenItem] = useState<number | null>(0);
 
   const faqData = [
     {
@@ -25,6 +25,7 @@ const FAQSection = () => {
         </>
       ),
     },
+    // ... other FAQ items ...
     {
       question: "How is ASUROO different from other insurance sites?",
       answer: (
@@ -104,37 +105,40 @@ const FAQSection = () => {
           {faqData.map((item, index) => (
             <div
               key={index}
-              className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group animate-fade-in-up  delay-${index}`}
+              className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group`}
             >
-              <button
-                onClick={() => toggleItem(index)}
-                className="w-full px-8 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primarypink-500 focus:ring-inset"
-                aria-expanded={openItem === index}
-              >
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 pr-4 group-hover:text-primarypink-600 transition-colors duration-200">
-                  {item.question}
-                </h3>
-                <ChevronDown
-                  className={`w-6 h-6 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
-                    openItem === index
-                      ? "rotate-180 text-primarypink-500"
-                      : "group-hover:text-primarypink-500"
-                  }`}
-                />
-              </button>
+              {/* Animation wrapper SEPARATE, so button is always clickable */}
+              <div className={`animate-fade-in-up delay-${index}`}>
+                <button
+                  onClick={() => toggleItem(index)}
+                  className="w-full px-8 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primarypink-500 focus:ring-inset pointer-events-auto"
+                  aria-expanded={openItem === index}
+                >
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 pr-4 group-hover:text-primarypink-600 transition-colors duration-200">
+                    {item.question}
+                  </h3>
+                  <ChevronDown
+                    className={`w-6 h-6 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
+                      openItem === index
+                        ? "rotate-180 text-primarypink-500"
+                        : "group-hover:text-primarypink-500"
+                    }`}
+                  />
+                </button>
 
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openItem === index
-                    ? "max-h-96 opacity-100"
-                    : "max-h-0 "
-                }`}
-              >
-                <div className="px-8 pb-6">
-                  <div className="w-full h-px bg-gradient-to-r from-primarypink-200 to-darkpink-200 mb-4"></div>
-                  <p className="text-gray-600 leading-relaxed text-base md:text-lg">
-                    {item.answer}
-                  </p>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openItem === index
+                      ? "max-h-96 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-8 pb-6">
+                    <div className="w-full h-px bg-gradient-to-r from-primarypink-200 to-darkpink-200 mb-4"></div>
+                    <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                      {item.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
