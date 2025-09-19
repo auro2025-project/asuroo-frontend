@@ -1,15 +1,17 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+  delay: string;
+  cardClass: string;
+}
+
 export default function FeatureCards() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  const features = [
+  const features: Feature[] = [
     {
       icon: "/assets/img/icon/car-insurance.png",
       title: "Private Car Insurance",
